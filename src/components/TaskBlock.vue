@@ -1,7 +1,7 @@
 <template>
   <div class="task">
     <h3 class="task__title">
-      {{ task.title }}
+      Разработка проекта
     </h3>
     <p class="task__date">
       14.01.2023 - 23.05.2023
@@ -25,9 +25,10 @@
 </template>
 
 <script setup lang="ts">
-defineProps<{
-  task: string
-}>();
+// import ITask from "@/types/task";
+// defineProps<{
+//   task: ITask
+// }>();
 </script>
 
 <style scoped lang="scss">
@@ -47,7 +48,7 @@ defineProps<{
   &__date {
     margin-top: 6px;
     color: $light-grey-3;
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
   }
 
@@ -61,7 +62,7 @@ defineProps<{
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
-    font-size: 12px;
+    font-size: 10px;
 
     &:not(:first-child) {
       margin-top: 2px;
