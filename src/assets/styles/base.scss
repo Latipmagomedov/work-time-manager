@@ -8,6 +8,18 @@
 body {
   background-color: $black;
   color: #fff;
+  user-select: none;
+}
+
+img {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+button, div {
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 button, input, textarea, select {
@@ -24,7 +36,15 @@ input {
 
 .container {
   width: 100%;
-  max-width: 480px;
-  padding: 0 16px;
+  max-width: 900px;
   margin: 0 auto;
+
+  @media (max-width: $mobile) {
+    padding: 0 16px;
+  }
+}
+
+.error-text {
+  color: $red;
+  font-size: 16px;
 }

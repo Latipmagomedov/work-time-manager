@@ -17,4 +17,9 @@ interface ISubtasks {
   completed: boolean
 }
 
-export default ITask;
+interface IProgress {
+  length: number,
+  completed: number
+}
+
+export { ITask, IProgress };

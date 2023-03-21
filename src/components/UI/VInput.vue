@@ -19,6 +19,7 @@
       class="v-input__input"
       :placeholder="placeholder"
       :disabled="disabled"
+      autocomplete="new-password"
     >
     <span
       v-if="$slots.iconRight"
@@ -33,7 +34,7 @@
 import { computed } from "vue";
 
 const props = defineProps<{
-  modelValue?: string,
+  modelValue?: string | number | undefined,
   placeholder?: string,
   type?: string,
   disabled?: boolean,

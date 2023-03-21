@@ -5,40 +5,42 @@
         Прогресс задач
       </h2>
       <p class="task-progress__subtitle">
-        13/23 выполнено
+        {{ progress.completed }}/{{ progress.length }} выполнено
       </p>
       <span class="task-progress__date">16 января</span>
     </div>
 
     <radial-progress-bar
-      :diameter="90"
+      :diameter="100"
       :animate-speed="1000"
-      :completed-steps="completedSteps"
-      :total-steps="totalSteps"
+      :completed-steps="percent"
+      :total-steps="100"
       :stroke-width="8"
       :inner-stroke-width="8"
       start-color="#1771F1"
       stop-color="rgba(113, 77, 217)"
       inner-stroke-color="#131313"
     >
-      <div class="task-progress__progress-text">
-        {{ precent }}%
+      <div
+        v-if="percent === 0 || percent >= 0"
+        class="task-progress__progress-text"
+      >
+        {{ percent }}%
       </div>
     </radial-progress-bar>
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref, computed } from "vue";
+import { computed } from "vue";
 import RadialProgressBar from "vue3-radial-progress";
+import { IProgress } from "@/types/task";
 
-const completedSteps = ref(4);
-const totalSteps = ref(10);
+const props = defineProps<{
+  progress: IProgress
+}>();
 
-const precent = computed(() => {
-  return completedSteps.value / totalSteps.value * 100;
-});
-
+const percent = computed(() => props.progress.completed / props.progress.length * 100);
 </script>
 
 <style scoped lang="scss">

@@ -36,7 +36,7 @@ withDefaults(defineProps<Props>(), {
 
 <style scoped lang="scss">
 .v-button {
-  height: 34px;
+  height: 48px;
   padding: 0 25px;
   border-radius: 12px;
   display: flex;
@@ -48,45 +48,75 @@ withDefaults(defineProps<Props>(), {
   cursor: pointer;
   text-align: center;
   text-decoration: none;
-  transition: 0.3s;
+  transition: .1s;
 
   &_brand {
     background-color: $brand;
 
-    &:hover {
-      background-color: rgba($brand, 0.8);
+    @media (min-width: $tablet) {
+      &:hover {
+        background-color: rgba($brand, 0.8);
+      }
+    }
+
+    &:active {
+      background-color: rgba($brand, 0.7);
     }
   }
 
   &_blue {
     background-color: $blue;
 
-    &:hover {
-      background-color: rgba($blue, 0.8);
+    @media (min-width: $tablet) {
+      &:hover {
+        background-color: rgba($blue, 0.8);
+      }
+    }
+
+    &:active {
+      background-color: rgba($blue, 0.7);
     }
   }
 
   &_red {
     background-color: $red;
 
-    &:hover {
-      background-color: rgba($red, 0.8);
+    @media (min-width: $tablet) {
+      &:hover {
+        background-color: rgba($red, 0.8);
+      }
+    }
+
+    &:active {
+      background-color: rgba($red, 0.7);
     }
   }
 
   &_green {
     background-color: $green;
 
-    &:hover {
-      background-color: rgba($green, 0.8);
+    @media (min-width: $tablet) {
+      &:hover {
+        background-color: rgba($green, 0.8);
+      }
+    }
+
+    &:active {
+      background-color: rgba($green, 0.7);
     }
   }
 
   &_grey {
     background-color: $light-grey-1;
 
-    &:hover {
-      background-color: rgba($light-grey-1, 0.8);
+    @media (min-width: $tablet) {
+      &:hover {
+        background-color: rgba($light-grey-1, 0.8);
+      }
+    }
+
+    &:active {
+      background-color: rgba($light-grey-1, 0.7);
     }
   }
 
